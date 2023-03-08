@@ -6,7 +6,7 @@ function App() {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:8085/').then((response) => {
+    axios.get('http://localhost:8080/').then((response) => {
       setMessage(response.data)
     }).catch((error) => {
       console.log(error);
