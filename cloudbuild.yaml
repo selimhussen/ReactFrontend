@@ -8,7 +8,8 @@ steps:
   - name: 'node:12.19.0'
     args:
       - run
-      - start
+      - start
+      - '--'
       - create-env 
       - install
       - '--unsafe-perm'
