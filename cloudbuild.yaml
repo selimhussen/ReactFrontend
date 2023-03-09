@@ -11,35 +11,37 @@ steps:
       - run
       - start
       - '--'
+      - create-env
+      - '--unsafe-perm'
     entrypoint: npm
-  #- name: 'node:18-alpine'
-   # env:
-    #  - 'DB_URL=${_DB_URL}'
-     # - 'DB_NAME=${_DB_NAME}'
-      #- 'EMAIL_SERVICE=${_EMAIL_SERVICE}'
-      #- 'EMAIL_USER=${_EMAIL_USER}'
-      #- 'EMAIL_PASSWORD=${_EMAIL_PASSWORD}'
-      #- 'SERVER_URL=${_SERVER_URL}'
-      #- 'STRIPE_KEY=${_STRIPE_KEY}'
-      #- 'BUCKET_NAME=${_BUCKET_NAME}'
-      #- 'SUPER_ADMIN_IP=${_SUPER_ADMIN_IP}'
-      #- 'PGHOST=${_PGHOST}'
-      #- 'PGUSER=${_PGUSER}'
-      #- 'PGDATABASE=${_PGDATABASE}'
-      #- 'PGPASSWORD=${_PGPASSWORD}'
-      #- 'PGPORT=${_PGPORT}'
-      #- 'MAILCHIMP_KEY=${_MAILCHIMP_KEY}'
-      #- 'MAILCHIMP_SERVER=${_MAILCHIMP_SERVER}'
-      #- 'MAILCHIMP_FLIPNBID_LIST_ID=${_MAILCHIMP_FLIPNBID_LIST_ID}'
-    #args:
-     # - run
-      #- create-env
-      #- start
-    #entrypoint: npm
+  - name: 'node:18-alpine'
+    env:
+      - 'DB_URL=${_DB_URL}'
+      - 'DB_NAME=${_DB_NAME}'
+      - 'EMAIL_SERVICE=${_EMAIL_SERVICE}'
+      - 'EMAIL_USER=${_EMAIL_USER}'
+      - 'EMAIL_PASSWORD=${_EMAIL_PASSWORD}'
+      - 'SERVER_URL=${_SERVER_URL}'
+      - 'STRIPE_KEY=${_STRIPE_KEY}'
+      - 'BUCKET_NAME=${_BUCKET_NAME}'
+      - 'SUPER_ADMIN_IP=${_SUPER_ADMIN_IP}'
+      - 'PGHOST=${_PGHOST}'
+      - 'PGUSER=${_PGUSER}'
+      - 'PGDATABASE=${_PGDATABASE}'
+      - 'PGPASSWORD=${_PGPASSWORD}'
+      - 'PGPORT=${_PGPORT}'
+      - 'MAILCHIMP_KEY=${_MAILCHIMP_KEY}'
+      - 'MAILCHIMP_SERVER=${_MAILCHIMP_SERVER}'
+      - 'MAILCHIMP_FLIPNBID_LIST_ID=${_MAILCHIMP_FLIPNBID_LIST_ID}'
+    args:
+      - run
+      - create-env
+      - start
+    entrypoint: npm
   - name: gcr.io/cloud-builders/gcloud
     args:
       - app
       - deploy
-      - cloudbuild.yaml
+      - app-prod.yaml
       - '--version=prod'
 timeout: 1600s
