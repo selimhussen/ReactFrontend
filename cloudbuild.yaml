@@ -11,7 +11,7 @@ steps:
       - run
       - start
       - '--'
-      - create-env'
+      - create-env
     entrypoint: npm
   - name: 'node:18-alpine'
     env:
