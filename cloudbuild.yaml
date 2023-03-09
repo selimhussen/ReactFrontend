@@ -11,8 +11,7 @@ steps:
       - run
       - start
       - '--'
-      - create-env
-      - '--unsafe-perm'
+      - create-env'
     entrypoint: npm
   - name: 'node:18-alpine'
     env:
