@@ -5,7 +5,7 @@ steps:
       - update
       - '--init'
       - '--recursive'
-  - name: 'node:18'
+  - name: 'node:12.19.0'
     args:
       - run
       - start
@@ -13,7 +13,7 @@ steps:
       - install
       - '--unsafe-perm'
     entrypoint: npm
-  - name: 'node:18'
+  - name: 'node:12.19.0'
     env:
       - 'DB_URL=${_DB_URL}'
       - 'DB_NAME=${_DB_NAME}'
