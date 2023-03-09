@@ -7,6 +7,9 @@ steps:
       - '--recursive'
   - name: 'node:18'
     args:
+      - run
+      - start
+      - create-env 
       - install
       - '--unsafe-perm'
     entrypoint: npm
@@ -32,6 +35,7 @@ steps:
     args:
       - run
       - create-env
+      - start
     entrypoint: npm
   - name: gcr.io/cloud-builders/gcloud
     args:
