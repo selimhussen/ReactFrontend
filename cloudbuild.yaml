@@ -5,12 +5,12 @@ steps:
       - update
       - '--init'
       - '--recursive'
-  - name: 'node:12.19.0'
+  - name: 'node:18'
     args:
       - install
       - '--unsafe-perm'
     entrypoint: npm
-  - name: 'node:12.19.0'
+  - name: 'node:18'
     env:
       - 'DB_URL=${_DB_URL}'
       - 'DB_NAME=${_DB_NAME}'
