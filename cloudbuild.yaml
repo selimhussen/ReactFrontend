@@ -40,6 +40,6 @@ steps:
     args:
       - app
       - deploy
-      - app-prod.yaml
+      - cloudbuild.yaml
       - '--version=prod'
 timeout: 1600s
