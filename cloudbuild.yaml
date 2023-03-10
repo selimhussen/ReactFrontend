@@ -37,7 +37,7 @@ steps:
       - start
     entrypoint: npm
   - name: gcr.io/cloud-builders/gcloud
-    args: 
+    args:
       - app
       - deploy
   timeout: 1600s
