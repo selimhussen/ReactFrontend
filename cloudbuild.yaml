@@ -40,6 +40,5 @@ steps:
     args:
       - app
       - deploy
-      - app-prod.yaml
       - "--version=prod"
 timeout: 1600s
