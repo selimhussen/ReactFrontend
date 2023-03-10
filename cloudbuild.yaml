@@ -1,4 +1,5 @@
 steps:
+  steps:
   - name: gcr.io/cloud-builders/git
     args:
       - submodule
